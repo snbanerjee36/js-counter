@@ -32,4 +32,4 @@
 
 let count = 0;
 
-const value = document.getElementById("value")
+const value = document.getElementById("value");

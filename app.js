@@ -31,5 +31,25 @@
 
 
 let count = 0;
-
 const value = document.getElementById("value");
+
+let decrease = document.querySelector('.decrease');
+let increase = document.querySelector('.increase');
+let reset = document.querySelector('.reset');
+
+decrease.addEventListener('click', function(){
+  count--;
+  value.innerHTML = count;  
+  (count<=1) ? count = 1:count= "" 
+
+});
+
+increase.addEventListener('click', function(){
+  count++;
+  value.innerHTML = count
+})
+
+reset.addEventListener('click', function(){
+  count = 0;
+  value.innerHTML =  count
+})

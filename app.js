@@ -38,15 +38,18 @@ let increase = document.querySelector('.increase');
 let reset = document.querySelector('.reset');
 
 decrease.addEventListener('click', function(){
+  count<=1 ? count = 1:count;
   count--;
   value.innerHTML = count;  
-  (count<=1) ? count = 1:count= "" 
+  
 
 });
 
 increase.addEventListener('click', function(){
+  count >= 10 ? count = 9: count ;
   count++;
-  value.innerHTML = count
+  value.innerHTML = count;
+ 
 })
 
 reset.addEventListener('click', function(){

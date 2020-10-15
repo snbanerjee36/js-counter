@@ -16,6 +16,7 @@
 //     count = 0
 // }
 
+
 // if(count > 0){
 //     value.style.color = 'green'
 // } else if(count<0){
@@ -30,6 +31,9 @@
 // })
 
 
+////////////////////// --------option 2-------------------
+
+
 let count = 0;
 const value = document.getElementById("value");
 
@@ -38,21 +42,48 @@ let increase = document.querySelector('.increase');
 let reset = document.querySelector('.reset');
 
 decrease.addEventListener('click', function(){
-  count<=1 ? count = 1:count;
+  count< 1 ? count = 1: '';
   count--;
-  value.innerHTML = count;  
+  value.textContent = count;  
   
 
 });
 
 increase.addEventListener('click', function(){
-  count >= 10 ? count = 9: count ;
+  count > 9 ? count = 9: '' ;
   count++;
-  value.innerHTML = count;
+  value.textContent = count;  
  
 })
 
 reset.addEventListener('click', function(){
   count = 0;
-  value.innerHTML =  count
+  value.textContent =  count
+})
+
+
+////////////////// -------------- option3 -----------------------
+
+
+let counter = 0;
+
+const result = document.getElementById("result");
+const tigger = document.querySelectorAll('.button');
+
+tigger.forEach(function(element){
+  element.addEventListener('click', function(e){
+   const item = e.currentTarget.classList;
+
+   if(item.contains('btndcrease')){
+     counter--
+   }  else if(item.contains('btnincrease')){
+    counter++
+  } else{
+    counter = 0
+  }
+
+   result.textContent = counter
+
+  })
+
 })
